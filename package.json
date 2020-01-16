@@ -14,12 +14,10 @@
     "nodemon": "^2.0.2"
   },
   "scripts": {
-    "start": "if-env NODE_ENV='production' && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon server.js --ignore 'client/*'\" \"npm run client\" ",
-    "install": "cd client && npm install",
-    "client": "cd client && npm run start",
-    "build": "cd client && npm run build"
+    "start": "node server",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Michael-Paul Cuccia, Full-Stack Web Developer",
   "license": "ISC"

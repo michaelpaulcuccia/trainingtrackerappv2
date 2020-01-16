@@ -26,10 +26,6 @@ const usersRouter = require('./routes/users');
 app.use('/training', trainingRouter);
 app.use('/users', usersRouter);
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'));
-  }
-
 app.listen(port, () => {
     console.log(`Yeah buddy! It's working over on port: ${port}`)
 });
