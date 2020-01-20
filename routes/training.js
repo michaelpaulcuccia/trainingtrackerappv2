@@ -49,7 +49,7 @@ router.route('/update/:id').post((req, res) => {
         training.type = req.body.type;
         training.instructional = req.body.instructional;
         training.openmat = req.body.openmat;
-        exercise.date = Date.parse(req.body.date);
+        training.date = Date.parse(req.body.date);
 
         training.save()
         .then(() => res.json('Training Updated!'))

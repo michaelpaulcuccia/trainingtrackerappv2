@@ -4,10 +4,13 @@ const Schema = mongoose.Schema;
 
 const trainingSchema = new Schema({
     username: { type: String, required: true },
-     type: String,
+     type: {
+         type: String,
+         required: true
+     },
     instructional: {
         type: Boolean,
-        default: false
+        default: false,
     },
     openmat: {
         type: Boolean,

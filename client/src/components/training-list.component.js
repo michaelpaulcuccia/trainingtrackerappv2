@@ -10,7 +10,7 @@ const Training = props => (
     <td>{props.training.openmat ? 'Yes' : 'No' }</td>
     <td>{props.training.date.substring(0,10)}</td>
     <td>
-      <Link to={"/edit/"+props.training._id}>edit</Link> | <a href="#" onClick={() => { props.deleteTraining(props.training._id) }}>delete</a>
+      <Link to={"/edit/" + props.training._id}>edit</Link> | <a href="#" onClick={() => { props.deleteTraining(props.training._id) }}>delete</a>
     </td>
   </tr>
 )

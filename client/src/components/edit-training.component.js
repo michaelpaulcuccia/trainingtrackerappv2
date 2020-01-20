@@ -9,7 +9,7 @@ export default class EditTraining extends Component {
 
         this.onChangeUsername = this.onChangeUsername.bind(this);
         this.onChangeType = this.onChangeType.bind(this);
-        this.onChangeInstructional = this.onChangeUsername.bind(this);
+        this.onChangeInstructional = this.onChangeInstructional.bind(this);
         this.onChangeOpenmat = this.onChangeOpenmat.bind(this);
         this.onChangeDate = this.onChangeDate.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -179,5 +179,6 @@ export default class EditTraining extends Component {
             </div>
         )
     }
+    
 }
 
