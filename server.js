@@ -24,11 +24,6 @@ connection.once('open', () => {
 app.use(express.static(path.join(__dirname, 'build')));
 
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
-
 //routes
 const trainingRouter = require('./routes/training');
 const usersRouter = require('./routes/users');
@@ -36,6 +31,13 @@ const usersRouter = require('./routes/users');
 app.use('/training', trainingRouter);
 app.use('/users', usersRouter);
 
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  });
+  
+
+  
 app.listen(port, () => {
     console.log(`Yeah buddy! It's working over on port: ${port}`)
 });
