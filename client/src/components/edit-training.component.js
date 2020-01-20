@@ -26,7 +26,7 @@ export default class EditTraining extends Component {
 
 
     componentDidMount() {
-        axios.get('http://localhost:5000/training/' + this.props.match.params.id)
+        axios.get('/training/' + this.props.match.params.id)
             .then(response => {
                 this.setState({
                     username: response.data.username,
@@ -40,7 +40,7 @@ export default class EditTraining extends Component {
                 console.log(error);
             })
 
-        axios.get('http://localhost:5000/users/')
+        axios.get('/users/')
             .then(response => {
                 if (response.data.length > 0) {
                     this.setState({
@@ -98,7 +98,7 @@ export default class EditTraining extends Component {
 
         console.log(training);
 
-        axios.post('http://localhost:5000/training/update/' + this.props.match.params.id, training)
+        axios.post('/training/update/' + this.props.match.params.id, training)
             .then(res => console.log(res.data));
 
         window.location = '/';

@@ -28,7 +28,7 @@ export default class CreateTraining extends Component {
 
 
     componentDidMount() {
-        axios.get('http://localhost:5000/users/')
+        axios.get('/users/')
             .then(res => {
                 if (res.data.length > 0) {
                     this.setState({
@@ -90,7 +90,7 @@ export default class CreateTraining extends Component {
 
         console.log(training);
 
-        axios.post('http://localhost:5000/training/add', training)
+        axios.post('/training/add', training)
             .then(res => console.log(res.data));
 
         //after you submit training, refreshes page
