@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const path = require('path');
 
 require('dotenv').config();
 
@@ -18,6 +19,15 @@ const connection = mongoose.connection;
 connection.once('open', () => {
     console.log("Connection to MongoDB Atlas is working!");
 })
+
+
+app.use(express.static(path.join(__dirname, 'build')));
+
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 
 //routes
 const trainingRouter = require('./routes/training');
